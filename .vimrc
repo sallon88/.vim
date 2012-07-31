@@ -153,7 +153,7 @@ let Tlist_Exit_OnlyWindow=1
 "winmanager
 "let g:winManagerWindowLayout='FileExplorer|TagList'
 let g:winManagerWindowLayout='NERDTree|TagList'
-nnoremap wm :WMToggle<CR>
+nnoremap <Leader>wm :WMToggle<CR>
 
 "改变sparkup的字义快捷键,默认为<c-e>
 let g:sparkupExecuteMapping = '<leader><tab>'

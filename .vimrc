@@ -45,8 +45,8 @@ set incsearch		"方便查询，如查book当输入/b时，会自动找到/b开�
 set nobackup 	"禁止备份
 set dy=lastline	"显示最多行，不用@@
 set ignorecase smartcase "智能匹配大小写
-set gdefault "默认本行内替换全部
 set go=
+set fdm=marker
 "set foldcolumn=3 "左侧四行, 用于显示缩进信息
 let mapleader = ","
 colo molokai
@@ -71,8 +71,6 @@ vnoremap <F2> <ESC>:tabnew ~/.vimrc<CR>
 "nnoremap ; :
 nnoremap } <C-]>
 nnoremap { <C-t>
-nnoremap / /\v
-vnoremap / /\v
 
 "查找函数定义处及跳回
 nnoremap <leader>f <C-]>
@@ -143,17 +141,18 @@ language messages zh_CN.UTF-8 "处理consle输出乱码
 
 "设置taglist配置 autochdir开启时会影响CommandT的使用
 "set tags=tags;
-"set autochdir
+set autochdir
 "首先搜索打开文件所在的目录, 然后搜索当前目录
-:set tags=./tags,tags
+":set tags=./tags,tags
 
-let Tlist_Show_One_File=1
-let Tlist_Exit_OnlyWindow=1
+"let Tlist_Show_One_File=1
+"let Tlist_Exit_OnlyWindow=1
 
 "winmanager
 "let g:winManagerWindowLayout='FileExplorer|TagList'
-let g:winManagerWindowLayout='NERDTree|TagList'
-nnoremap <Leader>wm :WMToggle<CR>
+"let g:winManagerWindowLayout='NERDTree|TagList'
+"let g:winManagerWindowLayout='NERDTree'
+nnoremap <Leader>nt :NERDTree<CR>
 
 "改变sparkup的字义快捷键,默认为<c-e>
 let g:sparkupExecuteMapping = '<leader><tab>'
@@ -173,9 +172,9 @@ function! NERDTree_IsValid()
 endfunction
 
 "commandt 快捷键
-nnoremap <Leader>g :CommandT<CR>
-nnoremap <Leader>c :CommandT<CR>
-nnoremap T :CommandT<CR>
+"nnoremap <Leader>g :CommandT<CR>
+"nnoremap <Leader>c :CommandT<CR>
+"nnoremap T :CommandT<CR>
 
 "进入打开文件的目录
 lcd %:p:h   
@@ -185,3 +184,8 @@ let g:neocomplcache_enable_at_startup = 1
 let g:neocomplcache_enable_auto_select = 1 
 let g:neocomplcache_enable_underbar_completion = 1
 let g:neocomplcache_max_list = 8
+
+"ctrlp
+set runtimepath^=~/.vim/bundle/ctrlp
+"let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_root_markers = ['.ctrlp']

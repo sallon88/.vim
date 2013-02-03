@@ -117,9 +117,6 @@ nnoremap <Leader>nt :NERDTreeToggle<CR>
 let g:sparkupExecuteMapping = '<leader><tab>'
 let g:sparkupNextMapping = '<c-e>'
 
-"supertab 补全方式
-let g:SuperTabDefaultCompletionType = 'context'
-
 "自动开启neocomplcache
 let g:neocomplcache_enable_at_startup = 1 
 let g:neocomplcache_enable_auto_select = 1 

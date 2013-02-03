@@ -82,7 +82,6 @@ nnoremap <leader>v V`]
 
 "以下配置插入模式下快捷键:
 :inoremap <c-j> <ESC>
-:cnoremap <c-j> <ESC>
 :vnoremap <c-j> <ESC>
 :inoremap <c-l> <right>
 :inoremap <c-h> <left>

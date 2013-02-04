@@ -19,10 +19,6 @@ if has("gui_running")
 	set guifont=WenQuanYi\ Micro\ Hei\ Mono\ 11
 endif
 
-if has('mouse')
-  set mouse=a
-endif
-
 set encoding=utf-8
 set fileencodings=ucs-bom,utf-8,cp936,big5,latin1
 set fileencoding=utf-8  
@@ -68,10 +64,6 @@ inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
 
-inoremap <F2> <ESC>:tabnew ~/.vimrc<CR>
-nnoremap <F2> <ESC>:tabnew ~/.vimrc<CR>
-vnoremap <F2> <ESC>:tabnew ~/.vimrc<CR>
-
 "复制或粘贴到系统缓存
 nnoremap <leader>y "+y
 vnoremap <leader>y "+y
@@ -111,7 +103,7 @@ nnoremap <c-l> <c-w>l
 :inoremap '' ''<ESC>i
 
 "----------------------------------------------------------------
-nnoremap <Leader>nt :NERDTreeToggle<CR>
+nnoremap <F2> :NERDTreeToggle<CR>
 
 "改变sparkup的字义快捷键,默认为<c-e>
 let g:sparkupExecuteMapping = '<leader><tab>'
@@ -125,6 +117,5 @@ let g:neocomplcache_max_list = 8
 
 "ctrlp
 set runtimepath^=~/.vim/bundle/ctrlp
-let g:ctrlp_working_path_mode = 'ra'
-let g:ctrlp_use_caching = 1
+let g:ctrlp_clear_cache_on_exit = 0
 let g:ctrlp_root_markers = ['config', '.git']

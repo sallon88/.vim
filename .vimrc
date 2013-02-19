@@ -56,8 +56,9 @@ lcd %:p:h   		"进入打开文件的目录
 
 "----------------------------------------------------------------
 "切换标签页快捷键
-:nmap H gT
-:nmap L gt
+nnoremap H gT
+nnoremap L gt
+nnoremap <leader>t :tabnew<space>
 
 "禁用<F1>, 防止误按出帮助
 inoremap <F1> <ESC>
@@ -73,11 +74,11 @@ nnoremap <leader>p "+p
 nnoremap <leader>v V`]
 
 "以下配置插入模式下快捷键:
-:inoremap <c-j> <ESC>
-:vnoremap <c-j> <ESC>
-:inoremap <c-l> <right>
-:inoremap <c-h> <left>
-
+inoremap <c-j> <esc>
+vnoremap <c-j> <esc>
+cnoremap <c-j> <c-c>
+inoremap <c-l> <right>
+inoremap <c-h> <left>
 
 "打开水平分割窗口
 nnoremap <leader>w <c-w>v<c-w>l
@@ -88,19 +89,18 @@ nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-l> <c-w>l
 
-
 "默认浏览器打开当前编辑的文档
-:nnoremap ;f :update<CR>:silent !firefox %:p &<CR>
-:nnoremap ;c :update<CR>:silent !/opt/google/chrome/google-chrome %:p &<CR>
+nnoremap ;f :update<CR>:silent !firefox %:p &<CR>
+nnoremap ;c :update<CR>:silent !/opt/google/chrome/google-chrome %:p &<CR>
 
 "自动插入匹配括号
-:inoremap ( ()<ESC>i
-:inoremap { {<CR>}<ESC>O
+inoremap ( ()<ESC>i
+inoremap { {<CR>}<ESC>O
 "插入后不回车
-:inoremap <leader>{ {}<ESC>i
-:inoremap [ []<ESC>i
-:inoremap "" ""<ESC>i
-:inoremap '' ''<ESC>i
+inoremap <leader>{ {}<ESC>i
+inoremap [ []<ESC>i
+inoremap "" ""<ESC>i
+inoremap '' ''<ESC>i
 
 "----------------------------------------------------------------
 nnoremap <F2> :NERDTreeToggle<CR>

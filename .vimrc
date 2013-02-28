@@ -63,26 +63,14 @@ nnoremap <leader>v V`]
 inoremap <c-j> <esc>
 vnoremap <c-j> <esc>
 cnoremap <c-j> <c-c>
-inoremap <c-l> <right>
-inoremap <c-h> <left>
 
 "打开水平分割窗口
 nnoremap <leader>w <c-w>v<c-w>l
-nnoremap <leader>s <c-w>s<c-w>j
 
 nnoremap <c-h> <c-w>h
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-l> <c-w>l
-
-"自动插入匹配括号
-inoremap ( ()<ESC>i
-inoremap { {<CR>}<ESC>O
-"插入后不回车
-inoremap <leader>{ {}<ESC>i
-inoremap [ []<ESC>i
-inoremap " ""<ESC>i
-inoremap ' ''<ESC>i
 
 "----------------------------------------------------------------
 nnoremap <F2> :NERDTreeToggle<CR>

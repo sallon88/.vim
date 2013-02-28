@@ -4,16 +4,6 @@ filetype plugin indent on
 
 autocmd FileType text setlocal textwidth=78
 
-autocmd BufReadPost *
-\ if line("'\"") > 1 && line("'\"") <= line("$") |
-\   exe "normal! g`\"" |
-\ endif
-
-if !exists(":DiffOrig")
-  command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
-		  \ | wincmd p | diffthis
-endif
-
 "----------------------------------------------------------------
 if has("gui_running")
 	set guifont=WenQuanYi\ Micro\ Hei\ Mono\ 11
@@ -49,6 +39,7 @@ set ignorecase smartcase "智能匹配大小写
 set go=
 set fdm=marker
 let mapleader = ","
+noremap \ ,
 colo molokai
 
 set autochdir
@@ -59,11 +50,6 @@ lcd %:p:h   		"进入打开文件的目录
 nnoremap H gT
 nnoremap L gt
 nnoremap <leader>t :tabnew<space>
-
-"禁用<F1>, 防止误按出帮助
-inoremap <F1> <ESC>
-nnoremap <F1> <ESC>
-vnoremap <F1> <ESC>
 
 "复制或粘贴到系统缓存
 nnoremap <leader>y "+y
@@ -89,18 +75,14 @@ nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-l> <c-w>l
 
-"默认浏览器打开当前编辑的文档
-nnoremap ;f :update<CR>:silent !firefox %:p &<CR>
-nnoremap ;c :update<CR>:silent !/opt/google/chrome/google-chrome %:p &<CR>
-
 "自动插入匹配括号
 inoremap ( ()<ESC>i
 inoremap { {<CR>}<ESC>O
 "插入后不回车
 inoremap <leader>{ {}<ESC>i
 inoremap [ []<ESC>i
-inoremap "" ""<ESC>i
-inoremap '' ''<ESC>i
+inoremap " ""<ESC>i
+inoremap ' ''<ESC>i
 
 "----------------------------------------------------------------
 nnoremap <F2> :NERDTreeToggle<CR>

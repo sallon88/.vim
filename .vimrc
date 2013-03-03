@@ -4,6 +4,11 @@ filetype plugin indent on
 
 autocmd FileType text setlocal textwidth=78
 
+autocmd BufReadPost *
+\ if line("'\"") > 1 && line("'\"") <= line("$") |
+\   exe "normal! g`\"" |
+\ endif
+
 "----------------------------------------------------------------
 if has("gui_running")
 	set guifont=WenQuanYi\ Micro\ Hei\ Mono\ 11

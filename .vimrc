@@ -39,6 +39,7 @@ set ruler 			"编辑过程中右下角显示光标位置的状态行
 set incsearch		"方便查询，如查book当输入/b时，会自动找到/b开关
 set hlsearch
 set nobackup 		"禁止备份
+set noswapfile 		"禁止备份
 set dy=lastline		"显示最多行，不用@@
 set ignorecase smartcase "智能匹配大小写
 set go=
@@ -50,6 +51,11 @@ colo molokai
 set autochdir
 lcd %:p:h   		"进入打开文件的目录
 
+set undofile
+set undodir=~/.cache/vim/undo
+if !isdirectory(expand(&undodir))
+	call mkdir(expand(&undodir),"p")
+endif
 "----------------------------------------------------------------
 "切换标签页快捷键
 nnoremap H gT

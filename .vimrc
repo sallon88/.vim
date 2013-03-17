@@ -44,6 +44,8 @@ set dy=lastline		"显示最多行，不用@@
 set ignorecase smartcase "智能匹配大小写
 set go=
 set fdm=marker
+set laststatus=2	"总是显示状态类
+set t_Co=256
 let mapleader = ","
 noremap \ ,
 colo molokai

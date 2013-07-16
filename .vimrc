@@ -103,3 +103,7 @@ let g:neocomplcache_auto_completion_start_length = 3
 set runtimepath^=~/.vim/bundle/ctrlp
 let g:ctrlp_clear_cache_on_exit = 0
 let g:ctrlp_root_markers = ['config', '.git']
+let g:ctrlp_prompt_mappings = {
+    \ 'AcceptSelection("e")': ['<c-t>'],
+    \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
+    \ }

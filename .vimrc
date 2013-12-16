@@ -9,6 +9,8 @@ autocmd BufReadPost *
 \   exe "normal! g`\"" |
 \ endif
 
+"autocmd InsertLeave * if expand('%') != '' | update | endif
+
 "----------------------------------------------------------------
 if has("gui_running")
 	set guifont=WenQuanYi\ Micro\ Hei\ Mono\ 11
@@ -42,6 +44,7 @@ set nobackup 		"禁止备份
 set noswapfile 		"禁止备份
 set dy=lastline		"显示最多行，不用@@
 set ignorecase smartcase "智能匹配大小写
+set clipboard=unnamed,unnamedplus "共享系统剪贴板
 set go=
 set fdm=marker
 set laststatus=2	"总是显示状态类
@@ -63,11 +66,6 @@ endif
 nnoremap H gT
 nnoremap L gt
 nnoremap <leader>t :tabnew<space>
-
-"复制或粘贴到系统缓存
-nnoremap <leader>y "+y
-vnoremap <leader>y "+y
-nnoremap <leader>p "+p
 
 "选择刚粘贴(或改变)的内容
 nnoremap <leader>v V`]
@@ -102,7 +100,7 @@ let g:neocomplcache_auto_completion_start_length = 3
 "ctrlp
 set runtimepath^=~/.vim/bundle/ctrlp
 let g:ctrlp_clear_cache_on_exit = 0
-let g:ctrlp_root_markers = ['config', '.git']
+let g:ctrlp_root_markers = ['license.txt','config', '.git']
 let g:ctrlp_prompt_mappings = {
     \ 'AcceptSelection("e")': ['<c-t>'],
     \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],

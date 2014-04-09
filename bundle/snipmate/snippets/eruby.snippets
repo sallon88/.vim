@@ -11,6 +11,11 @@ snippet %
 	<% ${1} %>
 snippet =
 	<%= ${1} %>${2}
+snippet field
+	<p>
+	  <%= f.label ${1} %>
+	  <%= f.text_field ${2} %>
+	</p>
 snippet end
 	<% end %>${1}
 snippet ead

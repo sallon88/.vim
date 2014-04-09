@@ -9,11 +9,12 @@ autocmd BufReadPost *
 \   exe "normal! g`\"" |
 \ endif
 
+autocmd BufNewFile,BufRead *.coffee set filetype=javascript
 "autocmd InsertLeave * if expand('%') != '' | update | endif
 
 "----------------------------------------------------------------
 if has("gui_running")
-	set guifont=WenQuanYi\ Micro\ Hei\ Mono\ 11
+	set guifont=WenQuanYi\ Micro\ Hei\ Mono\ 12
 endif
 
 set encoding=utf-8
@@ -30,9 +31,9 @@ set showcmd 		"显示命令输入
 set backspace=indent,eol,start
 set magic	
 set nu				"显示行号
-set tabstop=4		"设置tab键的长度 
-set shiftwidth=4	"换行时缩进4个空格
-"set expandtab		"用空格代替tab
+set tabstop=2		"设置tab键的长度 
+set shiftwidth=2	"换行时缩进4个空格
+set expandtab		"用空格代替tab
 set autoindent		"自动对齐
 set smartindent		"智能对齐方式
 set ai				"设置自动缩进
@@ -91,7 +92,7 @@ let g:sparkupExecuteMapping = '<leader><tab>'
 let g:sparkupNextMapping = '<c-e>'
 
 "自动开启neocomplcache
-let g:neocomplcache_enable_at_startup = 1 
+let g:neocomplcache_enable_at_startup = 0 
 let g:neocomplcache_enable_auto_select = 1 
 let g:neocomplcache_enable_underbar_completion = 1
 let g:neocomplcache_max_list = 8
@@ -100,8 +101,4 @@ let g:neocomplcache_auto_completion_start_length = 3
 "ctrlp
 set runtimepath^=~/.vim/bundle/ctrlp
 let g:ctrlp_clear_cache_on_exit = 0
-let g:ctrlp_root_markers = ['license.txt','config', '.git']
-let g:ctrlp_prompt_mappings = {
-    \ 'AcceptSelection("e")': ['<c-t>'],
-    \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
-    \ }
+let g:ctrlp_root_markers = ['.git','config','license.txt']

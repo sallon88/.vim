@@ -62,6 +62,12 @@ set undodir=~/.cache/vim/undo
 if !isdirectory(expand(&undodir))
 	call mkdir(expand(&undodir),"p")
 endif
+
+" 显示tab和空格
+set list
+" 设置tab和空格样式
+set lcs=tab:\|\ ,nbsp:%,trail:-
+
 "----------------------------------------------------------------
 "切换标签页快捷键
 nnoremap H gT
@@ -102,3 +108,5 @@ let g:neocomplcache_auto_completion_start_length = 3
 set runtimepath^=~/.vim/bundle/ctrlp
 let g:ctrlp_clear_cache_on_exit = 0
 let g:ctrlp_root_markers = ['.git','config','license.txt']
+
+autocmd FileType haml setlocal noexpandtab

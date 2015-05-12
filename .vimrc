@@ -64,9 +64,10 @@ if !isdirectory(expand(&undodir))
 endif
 
 " 显示tab和空格
-set list
+"set list
 " 设置tab和空格样式
-set lcs=tab:\|\ ,nbsp:%,trail:-
+"set lcs=tab:\|\ ,nbsp:%,trail:-
+set mouse=a
 
 "----------------------------------------------------------------
 "切换标签页快捷键

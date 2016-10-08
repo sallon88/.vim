@@ -1,19 +1,20 @@
 call plug#begin()
-Plug '~/.vim/local/colorscheme'
-Plug 'kien/ctrlp.vim'
+Plug 'tomasr/molokai'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'vim-ruby/vim-ruby'
-Plug 'tpope/vim-rails'
+"Plug 'tpope/vim-rails'
+"Plug 'slim-template/vim-slim'
 Plug 'tpope/vim-endwise'
-Plug 'slim-template/vim-slim'
 Plug 'rust-lang/rust.vim'
 Plug 'scrooloose/nerdtree', {'on' : 'NERDTreeToggle'}
-Plug 'bling/vim-bufferline'
 Plug 'Raimondi/delimitMate'
 Plug 'Shougo/neocomplcache.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 autocmd FileType text setlocal textwidth=78
@@ -33,7 +34,7 @@ if has("gui_running")
 endif
 set encoding=utf-8
 set fileencodings=ucs-bom,utf-8,cp936,big5,latin1
-set fileencoding=utf-8  
+set fileencoding=utf-8
 set nobomb 			"禁止插入bom(byte order mark)符
 
 source $VIMRUNTIME/delmenu.vim "处理菜单及右键菜单乱码
@@ -43,9 +44,9 @@ source $VIMRUNTIME/menu.vim
 set nocompatible 	"去除vi兼容
 set showcmd 		"显示命令输入
 set backspace=indent,eol,start
-set magic	
+set magic
 set nu				"显示行号
-set tabstop=4		"设置tab键的长度 
+set tabstop=4		"设置tab键的长度
 set shiftwidth=4	"换行时缩进4个空格
 set expandtab		"用空格代替tab
 set autoindent		"自动对齐
@@ -113,8 +114,8 @@ let g:sparkupExecuteMapping = '<leader><tab>'
 let g:sparkupNextMapping = '<c-e>'
 
 "自动开启neocomplcache
-let g:neocomplcache_enable_at_startup = 1 
-let g:neocomplcache_enable_auto_select = 1 
+let g:neocomplcache_enable_at_startup = 1
+let g:neocomplcache_enable_auto_select = 1
 let g:neocomplcache_enable_underbar_completion = 1
 let g:neocomplcache_max_list = 8
 let g:neocomplcache_auto_completion_start_length = 3
@@ -123,5 +124,7 @@ let g:neocomplcache_auto_completion_start_length = 3
 set runtimepath^=~/.vim/bundle/ctrlp
 let g:ctrlp_clear_cache_on_exit = 0
 let g:ctrlp_root_markers = ['.git','config','license.txt']
+
+let g:airline#extensions#tabline#enabled = 1
 
 autocmd FileType haml setlocal noexpandtab

@@ -17,6 +17,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
+"----------------------------------------------------------------
 autocmd FileType text setlocal textwidth=78
 
 autocmd BufReadPost *
@@ -25,7 +26,6 @@ autocmd BufReadPost *
 \ endif
 
 autocmd BufNewFile,BufRead *.coffee set filetype=javascript
-"autocmd InsertLeave * if expand('%') != '' | update | endif
 
 "----------------------------------------------------------------
 if has("gui_running")
@@ -80,8 +80,6 @@ endif
 
 " 显示tab和空格
 "set list
-" 设置tab和空格样式
-"set lcs=tab:\|\ ,nbsp:%,trail:-
 set mouse=a
 
 "----------------------------------------------------------------
@@ -106,13 +104,9 @@ nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-l> <c-w>l
 
-"----------------------------------------------------------------
 nnoremap <F2> :NERDTreeToggle<CR>
 
-"改变sparkup的字义快捷键,默认为<c-e>
-let g:sparkupExecuteMapping = '<leader><tab>'
-let g:sparkupNextMapping = '<c-e>'
-
+"----------------------------------------------------------------
 "自动开启neocomplcache
 let g:neocomplcache_enable_at_startup = 1
 let g:neocomplcache_enable_auto_select = 1
@@ -121,10 +115,7 @@ let g:neocomplcache_max_list = 8
 let g:neocomplcache_auto_completion_start_length = 3
 
 "ctrlp
-set runtimepath^=~/.vim/bundle/ctrlp
 let g:ctrlp_clear_cache_on_exit = 0
-let g:ctrlp_root_markers = ['.git','config','license.txt']
+let g:ctrlp_root_markers = ['config','license.txt']
 
 let g:airline#extensions#tabline#enabled = 1
-
-autocmd FileType haml setlocal noexpandtab

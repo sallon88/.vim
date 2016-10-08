@@ -1,7 +1,6 @@
 Install
 -------
-	cd 
+	cd
 	git clone https://github.com/sallon88/.vim.git
 	ln -s ~/.vim/.vimrc .
-	cd .vim
-	git submodule update --init --recursive
+	vim +PlugInstall +qa

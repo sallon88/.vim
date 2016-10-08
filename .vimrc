@@ -1,6 +1,20 @@
-call pathogen#infect()
-syntax on
-filetype plugin indent on
+call plug#begin()
+Plug '~/.vim/local/colorscheme'
+Plug 'kien/ctrlp.vim'
+Plug 'vim-ruby/vim-ruby'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-endwise'
+Plug 'slim-template/vim-slim'
+Plug 'rust-lang/rust.vim'
+Plug 'scrooloose/nerdtree', {'on' : 'NERDTreeToggle'}
+Plug 'bling/vim-bufferline'
+Plug 'Raimondi/delimitMate'
+Plug 'Shougo/neocomplcache.vim'
+Plug 'scrooloose/nerdcommenter'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'christoomey/vim-tmux-navigator'
+call plug#end()
 
 autocmd FileType text setlocal textwidth=78
 

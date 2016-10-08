@@ -21,16 +21,16 @@ call plug#end()
 autocmd FileType text setlocal textwidth=78
 
 autocmd BufReadPost *
-\ if line("'\"") > 1 && line("'\"") <= line("$") |
-\   exe "normal! g`\"" |
-\ endif
+            \ if line("'\"") > 1 && line("'\"") <= line("$") |
+            \   exe "normal! g`\"" |
+            \ endif
 
 autocmd BufNewFile,BufRead *.coffee set filetype=javascript
 
 "----------------------------------------------------------------
 if has("gui_running")
-	"set guifont=WenQuanYi\ Micro\ Hei\ Mono\ 12
-  set guifont=Monaco:h13
+    "set guifont=WenQuanYi\ Micro\ Hei\ Mono\ 12
+    set guifont=Monaco:h13
 endif
 set encoding=utf-8
 set fileencodings=ucs-bom,utf-8,cp936,big5,latin1
@@ -75,7 +75,7 @@ lcd %:p:h   		"进入打开文件的目录
 set undofile
 set undodir=~/.cache/vim/undo
 if !isdirectory(expand(&undodir))
-	call mkdir(expand(&undodir),"p")
+    call mkdir(expand(&undodir),"p")
 endif
 
 " 显示tab和空格

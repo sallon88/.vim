@@ -31,8 +31,8 @@ set showcmd 		"显示命令输入
 set backspace=indent,eol,start
 set magic	
 set nu				"显示行号
-set tabstop=2		"设置tab键的长度 
-set shiftwidth=2	"换行时缩进4个空格
+set tabstop=4		"设置tab键的长度 
+set shiftwidth=4	"换行时缩进4个空格
 set expandtab		"用空格代替tab
 set autoindent		"自动对齐
 set smartindent		"智能对齐方式

@@ -117,5 +117,3 @@ let g:neocomplcache_auto_completion_start_length = 3
 "ctrlp
 let g:ctrlp_clear_cache_on_exit = 0
 let g:ctrlp_root_markers = ['config','license.txt']
-
-let g:airline#extensions#tabline#enabled = 1

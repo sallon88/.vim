@@ -28,17 +28,12 @@ autocmd BufNewFile,BufRead *.coffee set filetype=javascript
 
 "----------------------------------------------------------------
 if has("gui_running")
-    "set guifont=WenQuanYi\ Micro\ Hei\ Mono\ 12
     set guifont=Monaco:h13
 endif
 set encoding=utf-8
 set fileencodings=ucs-bom,utf-8,cp936,big5,latin1
 set fileencoding=utf-8
 set nobomb 			"禁止插入bom(byte order mark)符
-
-source $VIMRUNTIME/delmenu.vim "处理菜单及右键菜单乱码
-source $VIMRUNTIME/menu.vim
-"language messages zh_CN.UTF-8 "处理consle输出乱码
 
 set nocompatible 	"去除vi兼容
 set showcmd 		"显示命令输入

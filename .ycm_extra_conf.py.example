@@ -1,0 +1,31 @@
+import os
+
+BASE_FLAGS = [
+    '-xc++',
+    #'-std=c++11',
+    '-W',
+    '-Wall',
+    '-D_GNU_SOURCE',
+
+    '-isystem',
+    '/usr/include/c++/3.4.5',
+    '-isystem',
+    '/usr/lib/gcc/x86_64-redhat-linux/3.4.5/../../../../include/c++/3.4.5',
+    '-isystem',
+    '/usr/lib/gcc/x86_64-redhat-linux/3.4.5/../../../../include/c++/3.4.5/x86_64-redhat-linux',
+    '-isystem',
+    '/usr/lib/gcc/x86_64-redhat-linux/3.4.5/../../../../include/c++/3.4.5/backward',
+    '-isystem',
+    '/usr/local/include',
+    '-isystem',
+    '/usr/lib/gcc/x86_64-redhat-linux/3.4.5/include',
+    '-isystem',
+    '/usr/include',
+]
+
+def FlagsForFile(filename, **kwargs):
+    final_flags = BASE_FLAGS
+    return {
+        'flags': final_flags,
+        'do_cache': True
+    }

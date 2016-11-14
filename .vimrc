@@ -8,12 +8,13 @@ Plug 'tpope/vim-endwise'
 Plug 'rust-lang/rust.vim'
 Plug 'scrooloose/nerdtree', {'on' : 'NERDTreeToggle'}
 Plug 'Raimondi/delimitMate'
-Plug 'Shougo/neocomplcache.vim'
+"Plug 'Shougo/neocomplcache.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'vim-airline/vim-airline'
+Plug 'Valloric/YouCompleteMe'
 call plug#end()
 
 "----------------------------------------------------------------
@@ -111,3 +112,7 @@ let g:neocomplcache_auto_completion_start_length = 3
 "ctrlp
 let g:ctrlp_clear_cache_on_exit = 0
 let g:ctrlp_root_markers = ['config','license.txt']
+
+let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
+let g:ycm_extra_conf_globlist = ['~/news-parser/*'] 
+nnoremap <leader>g :YcmCompleter GoTo<CR>
